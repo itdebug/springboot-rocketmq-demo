@@ -7,7 +7,7 @@ import junit.framework.TestSuite;
 /**
  * Unit test for simple App.
  */
-public class RmqProducerTest
+public class RmqProducerAppTest
     extends TestCase
 {
     /**
@@ -15,7 +15,7 @@ public class RmqProducerTest
      *
      * @param testName name of the test case
      */
-    public RmqProducerTest(String testName )
+    public RmqProducerAppTest(String testName )
     {
         super( testName );
     }
@@ -25,7 +25,7 @@ public class RmqProducerTest
      */
     public static Test suite()
     {
-        return new TestSuite( RmqProducerTest.class );
+        return new TestSuite( RmqProducerAppTest.class );
     }
 
     /**

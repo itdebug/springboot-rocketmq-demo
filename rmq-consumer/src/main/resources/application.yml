@@ -1,0 +1,2 @@
+rocketmq:
+    name-server: 172.16.0.122:9876

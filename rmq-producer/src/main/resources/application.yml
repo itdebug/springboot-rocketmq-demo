@@ -1,0 +1,7 @@
+rocketmq:
+    name-server: 172.16.0.122:9876
+    producer:
+        group: Pro_Group
+        send-message-timeout: 3000
+        retry-times-when-send-failed: 3
+        retry-times-when-send-async-failed: 3
