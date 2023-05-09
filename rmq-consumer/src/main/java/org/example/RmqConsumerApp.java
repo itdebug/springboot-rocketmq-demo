@@ -1,5 +1,6 @@
 package org.example;
 
+import com.alibaba.fastjson.JSON;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
@@ -10,6 +11,8 @@ import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Hello world!
@@ -23,10 +26,11 @@ public class RmqConsumerApp
     }
 
     @Service
-    @RocketMQMessageListener(topic = "elc-crm", consumerGroup = "my-consumer_test-topic-1")
+    @RocketMQMessageListener(topic = "audience_package_list", consumerGroup = "topic-1")
     public class MyConsumer1 implements RocketMQListener<String> {
-        public void onMessage(String message) {
-            System.out.println("received message: " + message);
+
+        public void onMessage(String s) {
+            System.out.println("received audience_package_list: " + s);
         }
     }
 
