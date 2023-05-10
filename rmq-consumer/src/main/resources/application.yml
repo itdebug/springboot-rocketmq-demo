@@ -1,2 +1,10 @@
 rocketmq:
     name-server: 172.16.0.122:9876
+    consumer:
+        group: campaign
+        send-message-timeout: 3000
+        retry-times-when-send-failed: 3
+        retry-times-when-send-async-failed: 3
+
+server:
+    port: 8081
