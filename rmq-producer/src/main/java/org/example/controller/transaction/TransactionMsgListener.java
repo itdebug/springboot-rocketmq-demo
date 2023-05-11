@@ -27,7 +27,7 @@ public class TransactionMsgListener implements RocketMQLocalTransactionListener 
         //TODO 提交或回滚本地事务
 
         //模拟一个处理结果
-        int index=8;
+        int index= 1;
         /**
          * 模拟返回事务状态
          */

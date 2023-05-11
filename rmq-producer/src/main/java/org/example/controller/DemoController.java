@@ -93,7 +93,7 @@ public class DemoController {
     public String index1(@PathVariable("tr") String tr) {
         log.info("发送半事务消息.....");
         Message<String> hehe = MessageBuilder.withPayload("hehe" + new Date()).setHeader("trid", tr).build();
-        rocketMQTemplate.sendMessageInTransaction("TopicTestTr", hehe, "hehe");
+        rocketMQTemplate.sendMessageInTransaction("test-topic-transation", hehe, "hehe");
         return "当前时间>>>>>" + new Date();
     }
 }
