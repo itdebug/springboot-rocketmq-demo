@@ -28,14 +28,12 @@ public class RmqProducerApp implements CommandLineRunner
     }
 
     public void run(String... args) throws Exception {
-        while (true) {
+
+        for(int i=0;i < 100; i++) {
             rocketMQTemplate.convertAndSend("elc-crm1", "Hello, World!");
-            rocketMQTemplate.send("test-topic-2", MessageBuilder.withPayload("Hello, World! I'm from spring message").build());
+//            rocketMQTemplate.send("test-topic-2", MessageBuilder.withPayload("Hello, World! I'm from spring message").build());
             rocketMQTemplate.convertAndSend("test-order-topic-2", new OrderPaidEvent("T_001", new BigDecimal("88.00")));
         }
-
-
-//        rocketMQTemplate.destroy(); // notes:  once rocketMQTemplate be destroyed, you can not send any message again with this rocketMQTemplate
     }
 
     @Data
