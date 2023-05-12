@@ -1,5 +1,5 @@
 rocketmq:
-    name-server: 172.16.0.122:9876;172.16.0.123:9876
+    nameServer:  172.16.0.123:9876
     consumer:
         group: campaign
         send-message-timeout: 3000

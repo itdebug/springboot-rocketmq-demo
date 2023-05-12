@@ -29,10 +29,10 @@ public class RmqProducerApp implements CommandLineRunner
 
     public void run(String... args) throws Exception {
 
-        for(int i=0;i < 100; i++) {
-            rocketMQTemplate.convertAndSend("elc-crm1", "Hello, World!");
+        for(int i=0;i < 1000; i++) {
+            rocketMQTemplate.convertAndSend("elc-crm1", "Hello, World! index: " + i);
 //            rocketMQTemplate.send("test-topic-2", MessageBuilder.withPayload("Hello, World! I'm from spring message").build());
-            rocketMQTemplate.convertAndSend("test-order-topic-2", new OrderPaidEvent("T_001", new BigDecimal("88.00")));
+//            rocketMQTemplate.convertAndSend("test-order-topic-2", new OrderPaidEvent("T_001", new BigDecimal("88.00")));
         }
     }
 

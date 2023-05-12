@@ -1,4 +1,4 @@
-package org.example.rmq;
+package org.example.rmq.sub;
 
 import cn.hutool.core.lang.Dict;
 import cn.hutool.json.JSONArray;
@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@RocketMQMessageListener(topic = "TopicTest", consumerGroup = "local", consumeMode = ConsumeMode.ORDERLY)
+@RocketMQMessageListener(topic = "TopicTest", consumerGroup = "TopicTest_G1", consumeMode = ConsumeMode.ORDERLY)
 public class TopicTestConsumer1 implements RocketMQListener<String> {
 
     public void onMessage(String s) {
-        System.out.println("TopicTest:" + s);
+        System.out.println("TopicTest_G1:" + s);
     }
 }
